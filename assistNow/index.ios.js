@@ -5,14 +5,27 @@
  */
 
 import React, { Component } from 'react';
-import { AppRegistry, StyleSheet, Text, View, Image } from 'react-native';
+import {
+  AppRegistry,
+  StyleSheet,
+  Text,
+  View,
+  Navigator
+} from 'react-native';
 
 export default class assistNow extends Component {
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Assist Now
+          Welcome to Assist Now!
+        </Text>
+        <Text style={styles.instructions}>
+          To get started, edit index.ios.js
+        </Text>
+        <Text style={styles.instructions}>
+          Press Cmd+R to reload,{'\n'}
+          Cmd+D or shake for dev menu
         </Text>
       </View>
     );
@@ -30,6 +43,11 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
+  },
+  instructions: {
+    textAlign: 'center',
+    color: '#333333',
+    marginBottom: 5,
   },
 });
 
