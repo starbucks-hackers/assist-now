@@ -10,12 +10,12 @@ import {
 export default class Home extends Component {
     toForm(){
         this.props.navigator.push({
-            id: 'addchild'
+            id: 'signup'
         });
     }
     toSignIn(){
         this.props.navigator.push({
-            id: 'SignIn'
+            id: 'signin'
         })
     }
     render(){
@@ -24,16 +24,22 @@ export default class Home extends Component {
         <Image source={{uri: 'https://www.publicdomainpictures.net/pictures/80000/velka/mother-with-the-baby.jpg'}} style={{width: 400, height: 670, position:'absolute'}}/>
             <Text style={styles.h1}><Text style={styles.assist}>NANNY</Text><Text style={styles.now}>NOW</Text></Text>
             <View style={styles.buttonWrapper}>
+            <View style={styles.button}>
                 <Button
-                    style={styles.button}
+                    
                     title="Sign Up"
+                    color ="white"
                     onPress={this.toForm.bind(this)}
                 />
+            </View>
+            <View>
                 <Button
                     style={styles.button}
+                    
                     title="Sign In"
                     onPress={this.toSignIn.bind(this)}
                 />
+            </View>
             </View>
         </View>
         );
@@ -50,7 +56,7 @@ const styles = StyleSheet.create({
     buttonWrapper: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        borderColor: 'red',
+        borderColor: '#E50914',
         marginTop: 450,
         backgroundColor: 'rgba(0,0,0,0)',
         // borderStyle: 'solid',
@@ -59,7 +65,13 @@ const styles = StyleSheet.create({
         width: 200,
     },
     button: {
-        borderColor: 'white',
+        borderStyle: 'solid',
+        borderColor: '#0079BD',
+        borderWidth: 1,
+        borderRadius: 3,
+        backgroundColor: '#0079BD',
+        paddingLeft: 10,
+        paddingRight: 10,
     },
     h1: {
         fontSize: 45,
@@ -68,7 +80,7 @@ const styles = StyleSheet.create({
         color: '#0079BD',
     },
     now:{
-        color: 'red'
+        color: '#E50914'
     },
     image:{
         flex: 1,
