@@ -15,12 +15,13 @@ import {
 
 import AddChild from './components/add-child/add-child'
 import SignUp from './components/home/Home'
+import Profile from './components/profile/Profile'
 
 export default class assistNow extends Component {
   renderScene(route, navigator) {
     switch(route.id) {
       case 'home':
-        return (<SignUp navigator={navigator} />);
+        return (<Profile navigator={navigator} />);
       case 'addchild': 
         return (<AddChild navigator={navigator} />)
     }
