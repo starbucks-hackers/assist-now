@@ -15,6 +15,7 @@ import {
 
 import AddChild from './components/add-child/add-child'
 import SignUp from './components/signup/Signup'
+import AddChild2 from './components/add-child/add-child2'
 
 export default class assistNow extends Component {
   renderScene(route, navigator) {
@@ -22,7 +23,9 @@ export default class assistNow extends Component {
       case 'signUp':
         return (<SignUp navigator={navigator} />);
       case 'addChild': 
-        return (<AddChild navigator={navigator} />)
+        return (<AddChild navigator={navigator} />);
+      case 'addChild2':
+        return (<AddChild2 navigator={navigator} />);
     }
   }
 

@@ -10,7 +10,7 @@ import {
 export default class Signup extends Component {
     onPress(){
         this.props.navigator.push({
-            id: 'addchild'
+            id: 'addChild'
         });
     }
     render(){
