@@ -13,36 +13,47 @@ import {
   Navigator
 } from 'react-native';
 
+import AddChild from './components/add-child/add-child'
+import SignUp from './components/signup/Signup'
+
 export default class assistNow extends Component {
+  renderScene(route, navigator) {
+    switch(route.id) {
+      case 'signup':
+        return (<SignUp navigator={navigator} />);
+      case 'addchild': 
+        return (<AddChild navigator={navigator} />)
+    }
+  }
+
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to Assist Now!
-        </Text>
-        
-      </View>
+      <Navigator 
+        initialRoute={{id:'signup'}}
+        renderScene={this.renderScene}
+        configureScreen={(route, routeStack) => Navigator.SceneConfigs.FloatFromBottom}
+      />
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//     backgroundColor: '#F5FCFF',
+//   },
+//   welcome: {
+//     fontSize: 20,
+//     textAlign: 'center',
+//     margin: 10,
+//   },
+//   instructions: {
+//     textAlign: 'center',
+//     color: '#333333',
+//     marginBottom: 5,
+//   },
+// });
 
 AppRegistry.registerComponent('assistNow', () => assistNow);
