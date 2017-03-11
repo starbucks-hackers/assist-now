@@ -19,9 +19,9 @@ import SignUp from './components/sign up/signup'
 export default class assistNow extends Component {
   renderScene(route, navigator) {
     switch(route.id) {
-      case 'signup':
+      case 'signUp':
         return (<SignUp navigator={navigator} />);
-      case 'addchild': 
+      case 'addChild': 
         return (<AddChild navigator={navigator} />)
     }
   }
@@ -29,7 +29,7 @@ export default class assistNow extends Component {
   render() {
     return (
       <Navigator 
-        initialRoute={{id:'signup'}}
+        initialRoute={{id:'signUp'}}
         renderScene={this.renderScene}
         configureScreen={(route, routeStack) => Navigator.SceneConfigs.FloatFromBottom}
       />
