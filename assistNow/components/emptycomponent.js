@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {
-  AppRegistry,
   StyleSheet,
   Text,
   View,
@@ -8,10 +7,16 @@ import {
 } from 'react-native';
 
 export default class name extends Component {
+  constructor() {
+    super();
+    this.state = {
+
+    }
+  }
   render() {
     return (
-      <View style={styles.container}>
-        
+      <View>
+        <Text>Empty Component</Text>
       </View>
     );
   }
