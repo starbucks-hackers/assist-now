@@ -9,24 +9,30 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  Navigator
 } from 'react-native';
 
+import AddChild from './components/add-child/add-child'
+import SignUp from './components/sign up/signup'
+
 export default class assistNow extends Component {
+  renderScene(route, navigator) {
+    switch(route.id) {
+      case 'signup':
+        return (<SignUp navigator={navigator} />);
+      case 'addchild': 
+        return (<AddChild navigator={navigator} />)
+    }
+  }
+
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
-      </View>
+      <Navigator 
+        initialRoute={{id:'signup'}}
+        renderScene={this.renderScene}
+        configureScreen={(route, routeStack) => Navigator.SceneConfigs.FloatFromBottom}
+      />
     );
   }
 }
