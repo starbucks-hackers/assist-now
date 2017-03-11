@@ -17,6 +17,7 @@ import AddChild from './components/add-child/add-child'
 import SignUp from './components/signup/Signup'
 import AddChild2 from './components/add-child/add-child2'
 
+
 export default class assistNow extends Component {
   renderScene(route, navigator) {
     switch(route.id) {
