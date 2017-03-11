@@ -5,13 +5,8 @@
  */
 
 import React, { Component } from 'react';
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View,
-  Navigator
-} from 'react-native';
+import { AppRegistry, StyleSheet, Text, View, Navigator} from 'react-native';
+
 
 export default class assistNow extends Component {
   render() {
@@ -20,7 +15,7 @@ export default class assistNow extends Component {
         <Text style={styles.welcome}>
           Welcome to Assist Now!
         </Text>
-        
+        <Signup />
       </View>
     );
   }
