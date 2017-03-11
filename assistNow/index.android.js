@@ -14,7 +14,7 @@ import {
 } from 'react-native';
 
 import AddChild from './components/add-child/add-child'
-import SignUp from './components/sign up/signup'
+import SignUp from './components/signup/Signup'
 
 export default class assistNow extends Component {
   renderScene(route, navigator) {
