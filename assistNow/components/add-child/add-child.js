@@ -17,11 +17,14 @@ export default class AddChild extends Component {
       firstname: '',
       lastname: '',
       age: '',
-      gender: ''
+      gender: 'male'
     };
   }
   goToAdditional() {
-    AsyncStorage.setItem('test', 'wregerxedfger');
+    AsyncStorage.setItem('childfirstname', this.state.firstname);
+    AsyncStorage.setItem('childlastname', this.state.lastname);
+    AsyncStorage.setItem('childage', this.state.age);
+    AsyncStorage.setItem('childgender', this.state.gender);
     this.props.navigator.push({
         id: 'addChild2'
     });
@@ -54,7 +57,7 @@ export default class AddChild extends Component {
         />
         <Text>Gender</Text>
         <Picker
-          selectedValue={this.state.language}
+          selectedValue={this.state.gender}
           onValueChange={(gender) => this.setState({gender: gender})}>
           <Picker.Item label="Male" value="male" />
           <Picker.Item label="Female" value="female" />
