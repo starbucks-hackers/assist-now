@@ -58,7 +58,7 @@ export default class Login extends Component {
                 onPress={this.goToHome.bind(this)}
         />
 
-        <Navbar />
+        <Navbar navigator={this.props.navigator} />
       </View>
     );
   }

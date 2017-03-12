@@ -15,12 +15,14 @@ import {
 
 
 import Home from './components/home/Home';
-import Login from './components/login/login'
+import Login from './components/login/login';
 import SignUp from './components/signup/Signup';
 import AddChild from './components/add-child/add-child';
 import AddChild2 from './components/add-child/add-child2';
-import Profile from './components/profile/Profile'
-
+import Profile from './components/profile/Profile';
+import Nannys from './components/nannys/Nannys';
+import NannyProfile from './components/nannys/nannysProfile/NannysProfile';
+import Notification from './components/notification/notification';
 
 
 export default class assistNow extends Component {
@@ -38,6 +40,12 @@ export default class assistNow extends Component {
         return (<AddChild2 navigator={navigator} />);
       case 'profile':
         return (<Profile navigator={navigator} />);
+      case 'nannys':
+        return (<Nannys navigator={navigator} />);
+      case 'nannyprofile':
+        return (<NannyProfile navigator={navigator} data={route}/>);
+      case 'notification':
+        return (<Notification navigator={navigator} />);
     }
   }
 
