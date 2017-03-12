@@ -17,6 +17,8 @@ import AddChild from './components/add-child/add-child'
 import SignUp from './components/signup/Signup'
 import AddChild2 from './components/add-child/add-child2'
 import Home from './components/home/Home'
+import Profile from './components/profile/Profile'
+
 
 
 export default class assistNow extends Component {
@@ -30,6 +32,8 @@ export default class assistNow extends Component {
         return (<AddChild navigator={navigator} />);
       case 'addChild2':
         return (<AddChild2 navigator={navigator} />);
+      case 'profile':
+        return (<Profile navigator={navigator} />);
     }
   }
 
