@@ -29,74 +29,20 @@ export default class Nannys extends Component{
         });
     }
     componentWillMount(){
-        this.getMoviesFromApiAsync();
-        // this.setState({
-        //     nannys: [
-        //         {
-        //             id: 1,
-        //             name: 'Tracy',
-        //             age: 22,
-        //             rating: 5,
-        //             img: 'https://upload.wikimedia.org/wikipedia/commons/d/d2/Michelle-Borromeo-Actor-Headshots-Vancouver-BC20110408_0030.jpg'
-        //         },
-        //         {
-        //             id: 2,
-        //             name: 'Stacy',
-        //             age: 45,
-        //             rating: 4,
-        //             img: 'https://c1.staticflickr.com/7/6129/6005842178_c7fd917eeb_b.jpg'
-        //         },
-        //         {
-        //             id: 3,
-        //             name: 'Mary',
-        //             age: 37,
-        //             rating: 4,
-        //             img: 'https://c1.staticflickr.com/4/3582/3902660001_ef57d48578_b.jpg'
-        //         },
-        //         {
-        //             id: 4,
-        //             name: 'Sally',
-        //             age: 24,
-        //             rating: 5,
-        //             img: 'https://upload.wikimedia.org/wikipedia/commons/f/f2/Sarah_Beattie-Smith.jpg'
-        //         },
-        //         {
-        //             id: 5,
-        //             name: 'Ashley',
-        //             age: 55,
-        //             rating: 4,
-        //             img: 'https://c1.staticflickr.com/1/496/19288474958_1b593667d5_b.jpg'
-        //         },
-        //         {
-        //             id: 6,
-        //             name: 'Emily',
-        //             age: 37,
-        //             rating: 4,
-        //             img: 'https://c1.staticflickr.com/2/1276/5190042885_bbf05b1571_b.jpg'
-        //         },
-        //         {
-        //             id: 7,
-        //             name: 'Samantha',
-        //             age: 22,
-        //             rating: 5,
-        //             img: 'https://upload.wikimedia.org/wikipedia/commons/d/d2/Michelle-Borromeo-Actor-Headshots-Vancouver-BC20110408_0030.jpg'
-        //         },
-        //         {
-        //             id: 8,
-        //             name: 'Wendy',
-        //             age: 45,
-        //             rating: 4,
-        //             img: 'https://c1.staticflickr.com/7/6129/6005842178_c7fd917eeb_b.jpg'
-        //         },
-        //         {
-        //             id: 9,
-        //             name: 'Margret',
-        //             age: 37,
-        //             rating: 4,
-        //             img: 'https://c1.staticflickr.com/4/3582/3902660001_ef57d48578_b.jpg'
-        //         },
-        //     ]
-        // })
+        this.getMoviesFromApiAsync().then((res) => {
+            let list = [];
+            for(var i = 0; i < res.length; i++){
+                res[i].img= 'https://upload.wikimedia.org/wikipedia/commons/3/34/PICA.jpg'
+                list.push(res[i]);
+            }
+            this.setState({
+                nannys: list
+            })
+            setTimeout(()=> {
+                console.log(this.state.nannys);
+            }, 2000)
+        })
+        
     }
     toNannyProfile(id){
         console.log(id);
@@ -112,7 +58,18 @@ export default class Nannys extends Component{
             <View style={styles.container}>
                 <Navbar navigator={this.props.navigator} />
                 <Text style={{fontSize: 50, fontWeight: '300', color:'#0079BD'}}>Nannys</Text>
-                
+                {this.state ?
+                    this.state.nannys.map((nanny) => {
+                        return <NannyCard 
+                                    key={nanny.id}
+                                    id={nanny.id}
+                                    first={nanny.firstName}
+                                    age={nanny.age}
+                                    rating={nanny.rating}
+                                    img={nanny.image}
+                                    test={this.toNannyProfile}
+                                />
+                    }) : null}
                 
             </View>
         )
