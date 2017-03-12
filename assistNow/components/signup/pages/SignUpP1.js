@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { 
+import {
+	StyleSheet,
 	Text,
+	TextInput,
 	View,
 	Button
 } from 'react-native';
@@ -10,72 +12,52 @@ export default class SignUpP1 extends Component {
 	constructor(props) {
     super(props);
     this.state = {
-      firstname: '',
-      lastname: '',
+      firstName: '',
+      lastName: '',
       address: '',
-      state: '',
-      telephone:''
+      phone:''
     };
   }
 	
+
 	render(){
 		return(
-			<View>
+			<View style={styles.SignUpContainer}>
 				<Text>First Name:</Text>
 				<TextInput
-					onChangeText={(firstname)=> this.setState({firstname})}
-					value={this.state.firstname}>
+					onChangeText={(firstName)=> {this.props.updateInfo('firstName', firstName)}}
+					>
 				</TextInput>
 				
 				<Text>Last Name:</Text>
 				<TextInput
-					onChangeText={(lastname)=> this.setState({lastname})}
-					value={this.state.lastname}>
+					onChangeText={(lastName)=> {this.props.updateInfo('lastName', lastName)}}
+					>
 				</TextInput>
 				
 				<Text>Address:</Text>
 				<TextInput
-					onChangeText={(address)=> this.setState({address})}
-					value={this.state.address}>
-				</TextInput>
-				
-				<Text>State:</Text>
-				<TextInput
-					onChangeText={(state)=> this.setState({state})}
-					value={this.state.state}>
+					onChangeText={(address)=> {this.props.updateInfo('address', address)}}
+					>
 				</TextInput>
 				
 				<Text>Telephone:</Text>
 				<TextInput
-					onChangeText={(telephone)=> this.setState({telephone})}
-					value={this.state.telephone}>
+					onChangeText={(phone)=> {this.props.updateInfo('phone', phone)}}
+					>
 				</TextInput>
 			</View>
 		);
 	}
 }
 
-// const styles = {
-// 	signUpStyle:{
-// 		background: 'rgba( 0, 121, 189, 0.85)',
-// 		justifyContent: 'center',
-// 		alignItems: 'center',
-// 		verticalAlign: 'center',
-// 		height: 60,
-// 		paddingTop: 15,
-// 		shadowColor: '#000',
-// 		shadowOffset: { width: 0, height: 2 },
-// 		shadowOpacity: 0.2
-// 	}
-// }
+const styles = StyleSheet.create({
+	signUpContainer:{
+		padding: 5,
+		color: 'rgba( 0, 121, 189, 0.85)',
+		flex: 1,
+		flexDirection: 'column',
+		justifyContent: 'center'
+	}
+})
 
-// export default class  SignUpP1 extends Component {
-// 	render() {
-// 		return(
-// 			<View>
-// 				<Text>Client Info</Text>
-// 				<Button></Button>
-// 			</View>
-// 		)
-// 	}
-// }

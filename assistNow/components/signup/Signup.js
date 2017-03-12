@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {
 	StyleSheet,
 	Text,
+	TextInput,
 	View,
 	Button
 } from 'react-native';
@@ -15,7 +16,14 @@ export default class SignUp extends Component {
 	constructor(props) {
     super(props);
     this.state = {
-    	p1isVisible: true
+    	p1isVisible: true,
+    	firstName: '',
+      lastName: '',
+      address: '',
+      phone:'',
+      email:'',
+      password:'',
+      id: ''
    	}
   }
 
@@ -25,17 +33,26 @@ export default class SignUp extends Component {
     });
   }
 
-  submitInfo(){
-  	
+  updateInfo(field, content){
+  	console.log(field, content)
+  		this.setState({
+  			[field]: content
+  		})
+  	setTimeout(()=>{
+  		console.log(this.state)
+  	}, 300)
   }
   
+  submitInfo() {
+
+  }
 
 	render(){
 		
 		return(
 			<View style={styles.container}>
 				<Text style={styles.signUpTitle}>Create Profile</Text>
-				{!this.state.p1isVisible? <SignUpP2 />:<SignUpP1 />}
+				{!this.state.p1isVisible? <SignUpP2 updateInfo={this.updateInfo.bind(this)} />:<SignUpP1 updateInfo={this.updateInfo.bind(this)} />}
 				{this.state.p1isVisible? 
 					<Button 
 						style={styles.button}
@@ -54,10 +71,10 @@ export default class SignUp extends Component {
 
 const styles = StyleSheet.create({
 	container: {
-		flex: 1,
+		// flex: 1,
 		// alignItems: 'center',
 		//justifyContent: 'center',
-		flexDirection: 'column',
+		// flexDirection: 'column',
 		// backgroundColor: 'rgba( 0, 0, 0, 0.85)'
 	},
 	signUpTitle: {
@@ -67,7 +84,9 @@ const styles = StyleSheet.create({
 		justifyContent:'center',
 		alignItems: 'center',
 		textAlign: 'center',
+		paddingTop: 8,
 		// backgroundColor: '#ccc',
+		borderBottomColor:'rgba( 201, 201, 201, 0.85)',
 		shadowColor: 'rgba( 201, 201, 201, 0.85)',
 		shadowOffset: { width: 0, height: 5 },
 		shadowOpacity: 0.9
@@ -83,20 +102,3 @@ const styles = StyleSheet.create({
   }
 });
 
-
-
-//Goal:
-
-// export default class SignUp extends Component {
-// 	const { signUpStyle } = styles;
-
-// 	render(){
-// 		return(
-// 			<View>
-// 				<Text style={signUpStyle}>Create Profile</Text>
-// 				// <SignUpP1 />
-// 				// <SignUpP2 />
-// 			</View>
-// 		);
-// 	}
-// }

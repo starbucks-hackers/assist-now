@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { 
-		Text, 
+import {
+		StyleSheet, 
+		Text,
+		TextInput, 
 		View,
 		Button 
 	} from 'react-native';
@@ -14,21 +16,29 @@ export default class  SignUpP2 extends Component {
     };
   }
 
+  // componentDidMount() {
+  //   AsyncStorage.getItem("email").then((res) => {
+  //       this.setState({"email": res});
+  //   })
+  //   AsyncStorage.getItem("password").then((res) => {
+  //       this.setState({"password": res});
+  //   })
+  // }
+
 	render() {
 		return(
 			<View>
-				<Text>email:</Text>
+				<Text>Email:</Text>
 				<TextInput
-					onChangeText={(email)=> this.setState({email})}
-					value={this.state.email}>
+					onChangeText={(email)=> {this.props.updateInfo('email', email)}}>
 				</TextInput>
 
 				<Text>password:</Text>
 				<TextInput
-					onChangeText={(password)=> this.setState({password})}
-					value={this.state.password}>
-					</TextInput>
+					onChangeText={(password)=> {this.props.updateInfo('password', password)}}>
+				</TextInput>
 			</View>
 		)
 	}
 }
+
