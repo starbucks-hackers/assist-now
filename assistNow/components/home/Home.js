@@ -10,7 +10,7 @@ import {
 export default class Home extends Component {
     toForm(){
         this.props.navigator.push({
-            id: 'signUp'
+            id: 'signup'
         });
     }
     toSignIn(){
