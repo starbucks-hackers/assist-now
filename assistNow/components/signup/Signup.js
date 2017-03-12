@@ -24,14 +24,18 @@ export default class SignUp extends Component {
     	p1isVisible: !this.state.p1isVisible
     });
   }
+
+  submitInfo(){
+  	
+  }
   
 
 	render(){
-		//button press =>returns <SignUpP1 /> or <SignUpP2 />
+		
 		return(
 			<View style={styles.container}>
 				<Text style={styles.signUpTitle}>Create Profile</Text>
-				{!this.state.p1isVisible? <SignUpP2/>: <SignUpP1 />}
+				{!this.state.p1isVisible? <SignUpP2 />:<SignUpP1 />}
 				{this.state.p1isVisible? 
 					<Button 
 						style={styles.button}
@@ -40,7 +44,7 @@ export default class SignUp extends Component {
           <Button 
 						style={styles.button}
 						title="Done"
-            onPress={this.changePage.bind(this)}/>
+            onPress={this.submitInfo.bind(this)}/>
         }
 				
 			</View>

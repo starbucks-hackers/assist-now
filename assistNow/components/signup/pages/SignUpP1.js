@@ -7,16 +7,49 @@ import {
 
 
 export default class SignUpP1 extends Component {
+	constructor(props) {
+    super(props);
+    this.state = {
+      firstname: '',
+      lastname: '',
+      address: '',
+      state: '',
+      telephone:''
+    };
+  }
 	
 	render(){
 		return(
 			<View>
 				<Text>First Name:</Text>
-				<Text>Last Name:</Text>
-				<Text>First Name:</Text>
-				<Text>Address:</Text>
+				<TextInput
+					onChangeText={(firstname)=> this.setState({firstname})}
+					value={this.state.firstname}>
+				</TextInput>
 				
-				<Text>Please upload your an image: </Text>
+				<Text>Last Name:</Text>
+				<TextInput
+					onChangeText={(lastname)=> this.setState({lastname})}
+					value={this.state.lastname}>
+				</TextInput>
+				
+				<Text>Address:</Text>
+				<TextInput
+					onChangeText={(address)=> this.setState({address})}
+					value={this.state.address}>
+				</TextInput>
+				
+				<Text>State:</Text>
+				<TextInput
+					onChangeText={(state)=> this.setState({state})}
+					value={this.state.state}>
+				</TextInput>
+				
+				<Text>Telephone:</Text>
+				<TextInput
+					onChangeText={(telephone)=> this.setState({telephone})}
+					value={this.state.telephone}>
+				</TextInput>
 			</View>
 		);
 	}
