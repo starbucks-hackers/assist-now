@@ -4,8 +4,7 @@ import {
 	View,
 	Button
 } from 'react-native';
-import SignUp1 from './components/signup/SignUpP1';
-import SignUp2 from './components/signup/SignUpP2';
+
 
 
 export default class SignUp extends Component {
@@ -15,8 +14,6 @@ export default class SignUp extends Component {
 		return(
 			<View>
 				<Text style={signUpStyle}>Create Profile</Text>
-				<SignUpP1 />
-				<SignUpP2 />
 			</View>
 		);
 	}
@@ -35,3 +32,22 @@ const styles = {
 		shadowOpacity: 0.2
 	}
 }
+
+
+//Goal:
+// import SignUp1 from './components/signup/SignUpP1';
+// import SignUp2 from './components/signup/SignUpP2';
+
+// export default class SignUp extends Component {
+// 	const { signUpStyle } = styles;
+
+// 	render(){
+// 		return(
+// 			<View>
+// 				<Text style={signUpStyle}>Create Profile</Text>
+// 				// <SignUpP1 />
+// 				// <SignUpP2 />
+// 			</View>
+// 		);
+// 	}
+// }
