@@ -81,13 +81,13 @@ export default class AddChild2 extends Component {
         />
         <Button
                 style={styles.button}
-                title="Back"
-                onPress={this.goToChild1.bind(this)}
+                title="Add"
+                onPress={this.addChild.bind(this)}
         />
         <Button
                 style={styles.button}
-                title="Add"
-                onPress={this.addChild.bind(this)}
+                title="Back"
+                onPress={this.goToChild1.bind(this)}
         />
       </View>
     );
