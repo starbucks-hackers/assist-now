@@ -47,6 +47,11 @@ export default class AddChild extends Component {
   addChild() {
     console.log("added child");
   }
+  goBack() {
+    this.props.navigator.push({
+      id:'profile'
+    })
+  }
   
 
   render() {
@@ -87,6 +92,11 @@ export default class AddChild extends Component {
                 style={styles.button}
                 title="Add"
                 onPress={this.addChild.bind(this)}
+        />
+        <Button
+                style={styles.button}
+                title="Back"
+                onPress={this.goBack.bind(this)}
         />
       </View>
     );

@@ -59,7 +59,7 @@ export default class Profile extends Component {
                 <Button
                     onPress={this.addChild.bind(this)}
                     title='+'
-                    color='white'
+                    color='red'
                 />
                 </View>
                 <Image source={{uri: this.state.img}} style={{width: 100, height:100, borderRadius: 50, marginBottom: 10, marginTop: 20}}/>
