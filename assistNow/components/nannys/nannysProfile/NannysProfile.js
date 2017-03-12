@@ -57,6 +57,13 @@ export default class NannyProfile extends Component{
         this.state.clickedNanny.notifications.push('You have a connection!')
         console.log(this.state.currentNanny.notifications);
     }
+    youHaveAConnection(){
+        alert('Your connection request has been sent')
+
+        setTimeout(()=> {
+            alert('Stacy would like to connect with you!')
+        }, 6000)
+    }
     render(){
         return (
             <View style={styles.container}>
@@ -94,7 +101,7 @@ export default class NannyProfile extends Component{
             <Button 
                 color='blue'
                 title="connect"
-                onPress={this.sendNotification.bind(this)}
+                onPress={this.youHaveAConnection.bind(this)}
             />
             </View>
             </View>
