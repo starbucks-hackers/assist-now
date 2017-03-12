@@ -15,7 +15,7 @@ export default class NannyCard extends Component {
             <View style={styles.container} >
                 
                 <Image source={{uri: this.props.img}} style={{width: 70, height:70, borderRadius: 10}}/>
-                <Text style={styles.nannyName}>{this.props.name}</Text>
+                <Text style={styles.nannyName}>{this.props.first}</Text>
                 <Text style={styles.nannyName}>{this.props.age}</Text>
                 <Text style={styles.rating}>{this.props.rating}</Text>
             </View>

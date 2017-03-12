@@ -11,153 +11,34 @@ export default class NannyProfile extends Component{
     constructor(props){
         super(props)
     }
+    getMoviesFromApiAsync() {
+        return fetch('https://8livqxv493.execute-api.us-west-2.amazonaws.com/dev/api/providers')
+        .then((response) => response.json())
+        .then((responseJson) => {
+            console.log(responseJson);
+            return responseJson;
+            
+        })
+        .catch((error) => {
+            console.error(error);
+        });
+    }
     componentWillMount(){
         this.setState({
             clickedNanny: false,
-            nannys: [
-                {
-                    id: 1,
-                    name: 'Tracy',
-                    last: 'Smith',
-                    age: 22,
-                    rating: 5,
-                    img: 'https://upload.wikimedia.org/wikipedia/commons/d/d2/Michelle-Borromeo-Actor-Headshots-Vancouver-BC20110408_0030.jpg',
-                    bio: 'Hi my name is Tracy. I am a professional baby sitter who loves to be around kids.',
-                    location: 'San Francisco, CA',
-                    notifications:[],
-                    email: 'ilovebabies@gmail.com',
-                    phone: '999-999-9999',
-                    specialSkills: ['Cooking', 'Spanish', 'First Aid'],
-                    certifications: ['CPR']
-                },
-                {
-                    id: 2,
-                    name: 'Stacy',
-                    last: 'Chu',
-                    age: 45,
-                    rating: 4,
-                    img: 'https://c1.staticflickr.com/7/6129/6005842178_c7fd917eeb_b.jpg',
-                    bio: 'Hi my name is Stacy. I am a professional baby sitter who loves to be around kids.',
-                    location: 'San Francisco, CA',
-                    notifications:[],
-                    email: 'ilovebabies@gmail.com',
-                    phone: '999-999-9999',
-                    specialSkills: ['Cooking', 'Spanish', 'First Aid'],
-                    certifications: ['CPR']                
-                },
-                {
-                    id: 3,
-                    name: 'Mary',
-                    last: 'Lee',
-                    age: 37,
-                    rating: 4,
-                    img: 'https://c1.staticflickr.com/4/3582/3902660001_ef57d48578_b.jpg',
-                    bio: 'Hi my name is Mary. I am a professional baby sitter who loves to be around kids.',
-                    location: 'San Francisco, CA',
-                    notifications:[],
-                    email: 'ilovebabies@gmail.com',
-                    phone: '999-999-9999',
-                    specialSkills: ['Cooking', 'Spanish', 'First Aid'],
-                    certifications: ['CPR']                
-                },
-                {
-                    id: 4,
-                    name: 'Sally',
-                    last: 'Hawkins',
-                    age: 24,
-                    rating: 5,
-                    img: 'https://upload.wikimedia.org/wikipedia/commons/f/f2/Sarah_Beattie-Smith.jpg',
-                    bio: 'Hi my name is Sally. I am a professional baby sitter who loves to be around kids.',
-                    location: 'San Francisco, CA',
-                    notifications:[],
-                    email: 'ilovebabies@gmail.com',
-                    phone: '999-999-9999',
-                    specialSkills: ['Cooking', 'Spanish', 'First Aid'],
-                    certifications: ['CPR']                
-                },
-                {
-                    id: 5,
-                    name: 'Ashley',
-                    last: 'Simposon',
-                    age: 55,
-                    rating: 4,
-                    img: 'https://c1.staticflickr.com/1/496/19288474958_1b593667d5_b.jpg',
-                    bio: 'Hi my name is Ashley. I am a professional baby sitter who loves to be around kids.',
-                    location: 'San Francisco, CA',
-                    notifications:[],
-                    email: 'ilovebabies@gmail.com',
-                    phone: '999-999-9999',
-                    specialSkills: ['Cooking', 'Spanish', 'First Aid'],
-                    certifications: ['CPR']                
-                },
-                {
-                    id: 6,
-                    name: 'Emily',
-                    last: 'Blunt',
-                    age: 37,
-                    rating: 4,
-                    img: 'https://c1.staticflickr.com/2/1276/5190042885_bbf05b1571_b.jpg',
-                    bio: 'Hi my name is Emily. I am a professional baby sitter who loves to be around kids.',
-                    location: 'San Francisco, CA',
-                    notifications:[],
-                    email: 'ilovebabies@gmail.com',
-                    phone: '999-999-9999',
-                    specialSkills: ['Cooking', 'Spanish', 'First Aid'],
-                    certifications: ['CPR']                
-                },
-                {
-                    id: 7,
-                    name: 'Samantha',
-                    last: 'Gomez',
-                    age: 22,
-                    rating: 5,
-                    img: 'https://upload.wikimedia.org/wikipedia/commons/d/d2/Michelle-Borromeo-Actor-Headshots-Vancouver-BC20110408_0030.jpg',
-                    bio: 'Hi my name is Mary. I am a professional baby sitter who loves to be around kids.',
-                    location: 'San Francisco, CA',
-                    notifications:[],
-                    email: 'ilovebabies@gmail.com',
-                    phone: '999-999-9999',
-                    specialSkills: ['Cooking', 'Spanish', 'First Aid'],
-                    certifications: ['CPR']                
-                },
-                {
-                    id: 8,
-                    name: 'Wendy',
-                    last: 'Pan',
-                    age: 45,
-                    rating: 4,
-                    img: 'https://c1.staticflickr.com/7/6129/6005842178_c7fd917eeb_b.jpg',
-                    bio: 'Hi my name is Mary. I am a professional baby sitter who loves to be around kids.',
-                    location: 'San Francisco, CA',
-                    notifications:[],
-                    email: 'ilovebabies@gmail.com',
-                    phone: '999-999-9999',
-                    specialSkills: ['Cooking', 'Spanish', 'First Aid'],
-                    certifications: ['CPR']                
-                },
-                {
-                    id: 9,
-                    name: 'Margret',
-                    last: 'Thatcher',
-                    age: 37,
-                    rating: 4,
-                    img: 'https://c1.staticflickr.com/4/3582/3902660001_ef57d48578_b.jpg',
-                    bio: 'Hi my name is Mary. I am a professional baby sitter who loves to be around kids.',
-                    location: 'San Francisco, CA',
-                    notifications:[],
-                    email: 'ilovebabies@gmail.com',
-                    phone: '999-999-9999',
-                    specialSkills: ['Cooking', 'Spanish', 'First Aid'],
-                    certifications: ['CPR']                
-                },
-            ]
         })
-        console.log(this.props.data);
-        
-    }
-    
-    componentDidMount(){
-        if(this.state.nannys){
+        this.getMoviesFromApiAsync().then((res) => {
+            let list = [];
+            for(var i = 0; i < res.length; i++){
+                res[i].img= 'https://upload.wikimedia.org/wikipedia/commons/3/34/PICA.jpg'
+                list.push(res[i]);
+            }
+            console.log(list)
+            this.setState({
+                nannys: list
+            })
+            console.log(this.state.nannys);
+            if(this.state.nannys){
             for(var i = 0; i < this.state.nannys.length; i++){
                 if(this.state.nannys[i].id === this.props.data.passProps.id){
                     this.setState({
@@ -167,6 +48,10 @@ export default class NannyProfile extends Component{
             }
             console.log(this.state.clickedNanny,"sefsef");
         }     
+        })
+        
+        console.log(this.props.data);
+        
     }
     sendNotification(){
         this.state.clickedNanny.notifications.push('You have a connection!')
@@ -176,11 +61,11 @@ export default class NannyProfile extends Component{
         return (
             <View style={styles.container}>
             <View style={styles.firstRow}>
-                <Image source={{uri: this.state.clickedNanny.img}} style={{width:100, height: 100}}/>
-                <Text style={styles.name}>{this.state.clickedNanny ? this.state.clickedNanny.name : ''}</Text>
+                <Image source={{uri: this.state.clickedNanny.image}} style={{width:100, height: 100}}/>
+                <Text style={styles.name}>{this.state.clickedNanny ? this.state.clickedNanny.firstName : ''}</Text>
                 <Text style={styles.age}>{this.state.clickedNanny ? this.state.clickedNanny.age : ''}</Text>
             </View>
-                <Text style={styles.location}> {this.state.clickedNanny ? this.state.clickedNanny.location : ''}</Text>
+                <Text style={styles.location}> {this.state.clickedNanny ? this.state.clickedNanny.address : ''}</Text>
                 <Text style={{fontSize: 20, marginBottom: 7}}>Bio</Text>
                 <Text style={styles.bio}> {this.state.clickedNanny ? this.state.clickedNanny.bio : ''}</Text>
                 <Text style={{fontSize: 20, marginBottom: 7}}>Contact</Text>
@@ -193,13 +78,13 @@ export default class NannyProfile extends Component{
                 <Text>{this.state.clickedNanny ? this.state.clickedNanny.specialSkills.map((skill, index) => {
                     if(index === this.state.clickedNanny.specialSkills.length - 1){
                         return (
-                            <Text>
+                            <Text key={index}>
                                 {skill}
                             </Text>
                         )
                     } else {
                         return (
-                            <Text>
+                            <Text key={index}>
                                 {skill}, &nbsp;
                             </Text>
                         )
@@ -231,7 +116,7 @@ const styles = StyleSheet.create({
         fontSize: 50,
         fontWeight: '200',
         marginLeft: 40,
-        marginRight: 40,
+        marginRight: 30,
     },
     age:{
         fontSize: 30,
