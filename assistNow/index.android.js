@@ -15,10 +15,10 @@ import {
 
 
 import Home from './components/home/Home';
+import Login from './components/login/login'
 import SignUp from './components/signup/SignUp';
 import AddChild from './components/add-child/add-child';
 import AddChild2 from './components/add-child/add-child2';
-
 
 
 export default class assistNow extends Component {
@@ -26,6 +26,8 @@ export default class assistNow extends Component {
     switch(route.id) {
       case 'home':
         return (<Home navigator={navigator} />);
+      case 'login':
+        return (<Login navigator={navigator} />); 
       case 'signup':
         return (<SignUp navigator={navigator} />);
       case 'addChild': 
@@ -38,7 +40,7 @@ export default class assistNow extends Component {
   render() {
     return (
       <Navigator 
-        initialRoute={{id:'signUp'}}
+        initialRoute={{id:'home'}}
         renderScene={this.renderScene}
         configureScreen={(route, routeStack) => Navigator.SceneConfigs.FloatFromBottom}
       />
