@@ -1,2 +1,2 @@
-# assist-now
-Connecting care providers to people
+# nanny-now
+Connecting care providers to babies
