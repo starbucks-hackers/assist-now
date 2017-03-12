@@ -5,7 +5,8 @@ import {
   View,
   Navigator,
   TextInput,
-  Button
+  Button,
+  AsyncStorage
 } from 'react-native';
 
 import Navbar from './../navbar/navbar'
@@ -26,9 +27,22 @@ export default class Login extends Component {
   }
   login() {
     console.log("logging in");
-    this.props.navigator.push({
-        id: 'profile'
-    });
+    return fetch(`https://8livqxv493.execute-api.us-west-2.amazonaws.com/dev/api/user/${this.state.email}`).then((response) => response.json())
+      .then((responseJson) => {
+        console.log("@@@@", responseJson)
+        if (this.state.password === responseJson.password){
+          AsyncStorage.setItem('currentUser', this.state.email);
+          this.props.navigator.push({
+            id:'profile'
+          })
+        } else {
+          alert("wrong password")
+        }
+      })
+        .catch((error) => {
+            console.error(error);
+            alert("wrong username")
+        });
   }
 
   render() {
