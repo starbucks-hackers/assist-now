@@ -22,7 +22,11 @@ export default class NannyProfile extends Component{
                     rating: 5,
                     img: 'https://upload.wikimedia.org/wikipedia/commons/d/d2/Michelle-Borromeo-Actor-Headshots-Vancouver-BC20110408_0030.jpg',
                     bio: 'Hi my name is Tracy. I am a professional baby sitter who loves to be around kids.',
-                    notifications:[]
+                    location: 'San Francisco, CA',
+                    notifications:[],
+                    email: 'ilovebabies@gmail.com',
+                    phone: '999-999-9999',
+                    specialSkills: ['Cooking', 'CPR', 'Spanish', 'First Aid']
                 },
                 {
                     id: 2,
@@ -31,7 +35,11 @@ export default class NannyProfile extends Component{
                     rating: 4,
                     img: 'https://c1.staticflickr.com/7/6129/6005842178_c7fd917eeb_b.jpg',
                     bio: 'Hi my name is Stacy. I am a professional baby sitter who loves to be around kids.',
-                    notifications:[]
+                    location: 'San Francisco, CA',
+                    notifications:[],
+                    email: 'ilovebabies@gmail.com',
+                    phone: '999-999-9999',
+                    specialSkills: ['Cooking', 'CPR', 'Spanish', 'First Aid']
                 },
                 {
                     id: 3,
@@ -40,7 +48,11 @@ export default class NannyProfile extends Component{
                     rating: 4,
                     img: 'https://c1.staticflickr.com/4/3582/3902660001_ef57d48578_b.jpg',
                     bio: 'Hi my name is Mary. I am a professional baby sitter who loves to be around kids.',
-                    notifications:[]
+                    location: 'San Francisco, CA',
+                    notifications:[],
+                    email: 'ilovebabies@gmail.com',
+                    phone: '999-999-9999',
+                    specialSkills: ['Cooking', 'CPR', 'Spanish', 'First Aid']
                 },
                 {
                     id: 4,
@@ -49,7 +61,11 @@ export default class NannyProfile extends Component{
                     rating: 5,
                     img: 'https://upload.wikimedia.org/wikipedia/commons/f/f2/Sarah_Beattie-Smith.jpg',
                     bio: 'Hi my name is Sally. I am a professional baby sitter who loves to be around kids.',
-                    notifications:[]
+                    location: 'San Francisco, CA',
+                    notifications:[],
+                    email: 'ilovebabies@gmail.com',
+                    phone: '999-999-9999',
+                    specialSkills: ['Cooking', 'CPR', 'Spanish', 'First Aid']
                 },
                 {
                     id: 5,
@@ -58,7 +74,11 @@ export default class NannyProfile extends Component{
                     rating: 4,
                     img: 'https://c1.staticflickr.com/1/496/19288474958_1b593667d5_b.jpg',
                     bio: 'Hi my name is Ashley. I am a professional baby sitter who loves to be around kids.',
-                    notifications:[]
+                    location: 'San Francisco, CA',
+                    notifications:[],
+                    email: 'ilovebabies@gmail.com',
+                    phone: '999-999-9999',
+                    specialSkills: ['Cooking', 'CPR', 'Spanish', 'First Aid']
                 },
                 {
                     id: 6,
@@ -67,7 +87,11 @@ export default class NannyProfile extends Component{
                     rating: 4,
                     img: 'https://c1.staticflickr.com/2/1276/5190042885_bbf05b1571_b.jpg',
                     bio: 'Hi my name is Emily. I am a professional baby sitter who loves to be around kids.',
-                    notifications:[]
+                    location: 'San Francisco, CA',
+                    notifications:[],
+                    email: 'ilovebabies@gmail.com',
+                    phone: '999-999-9999',
+                    specialSkills: ['Cooking', 'CPR', 'Spanish', 'First Aid']
                 },
                 {
                     id: 7,
@@ -76,7 +100,11 @@ export default class NannyProfile extends Component{
                     rating: 5,
                     img: 'https://upload.wikimedia.org/wikipedia/commons/d/d2/Michelle-Borromeo-Actor-Headshots-Vancouver-BC20110408_0030.jpg',
                     bio: 'Hi my name is Mary. I am a professional baby sitter who loves to be around kids.',
-                    notifications:[]
+                    location: 'San Francisco, CA',
+                    notifications:[],
+                    email: 'ilovebabies@gmail.com',
+                    phone: '999-999-9999',
+                    specialSkills: ['Cooking', 'CPR', 'Spanish', 'First Aid']
                 },
                 {
                     id: 8,
@@ -85,7 +113,11 @@ export default class NannyProfile extends Component{
                     rating: 4,
                     img: 'https://c1.staticflickr.com/7/6129/6005842178_c7fd917eeb_b.jpg',
                     bio: 'Hi my name is Mary. I am a professional baby sitter who loves to be around kids.',
-                    notifications:[]
+                    location: 'San Francisco, CA',
+                    notifications:[],
+                    email: 'ilovebabies@gmail.com',
+                    phone: '999-999-9999',
+                    specialSkills: ['Cooking', 'CPR', 'Spanish', 'First Aid']
                 },
                 {
                     id: 9,
@@ -94,7 +126,11 @@ export default class NannyProfile extends Component{
                     rating: 4,
                     img: 'https://c1.staticflickr.com/4/3582/3902660001_ef57d48578_b.jpg',
                     bio: 'Hi my name is Mary. I am a professional baby sitter who loves to be around kids.',
-                    notifications:[]
+                    location: 'San Francisco, CA',
+                    notifications:[],
+                    email: 'ilovebabies@gmail.com',
+                    phone: '999-999-9999',
+                    specialSkills: ['Cooking', 'CPR', 'Spanish', 'First Aid']
                 },
             ]
         })
@@ -126,7 +162,31 @@ export default class NannyProfile extends Component{
                 <Text style={styles.name}>{this.state.clickedNanny ? this.state.clickedNanny.name : ''}</Text>
                 <Text style={styles.age}>{this.state.clickedNanny ? this.state.clickedNanny.age : ''}</Text>
             </View>
+                <Text style={styles.location}> {this.state.clickedNanny ? this.state.clickedNanny.location : ''}</Text>
+                <Text style={{fontSize: 20, marginBottom: 7}}>Bio</Text>
                 <Text style={styles.bio}> {this.state.clickedNanny ? this.state.clickedNanny.bio : ''}</Text>
+                <Text style={{fontSize: 20, marginBottom: 7}}>Contact</Text>
+
+            
+                <Text style={styles.phone}> {this.state.clickedNanny ? this.state.clickedNanny.phone : ''}</Text>
+                <Text style={styles.email}> {this.state.clickedNanny ? this.state.clickedNanny.email : ''}</Text>
+
+                <Text style={{fontSize: 20, marginBottom: 7, marginTop: 30,}}>Special Skills</Text>
+                <Text>{this.state.clickedNanny ? this.state.clickedNanny.specialSkills.map((skill, index) => {
+                    if(index === this.state.clickedNanny.specialSkills.length - 1){
+                        return (
+                            <Text>
+                                {skill}
+                            </Text>
+                        )
+                    } else {
+                        return (
+                            <Text>
+                                {skill}, &nbsp;
+                            </Text>
+                        )
+                    }
+                }) : ''}</Text>
             <View style={styles.button}>
             <Button 
                 color='blue'
@@ -160,6 +220,7 @@ const styles = StyleSheet.create({
     },
     bio:{
         width: 300,
+        marginBottom: 30,
     },
     button:{
         borderColor: 'blue',
@@ -168,5 +229,20 @@ const styles = StyleSheet.create({
         marginTop: 50,
         borderStyle: 'solid',
         width: 300,
+    },
+    location:{
+        position: 'absolute',
+        top: 80,
+        left: 175,
+        fontWeight: '100',
+    },
+    contact:{
+        marginBottom: 30,
+    },
+    email:{
+        justifyContent: 'center'
+    },
+    phone:{
+        justifyContent: 'center'
     }
 })
