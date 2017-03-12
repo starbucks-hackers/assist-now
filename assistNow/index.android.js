@@ -13,10 +13,17 @@ import {
   Navigator
 } from 'react-native';
 
+<<<<<<< HEAD
 import Home from './components/home/Home';
 import SignUp from './components/signup/SignUp';
 import AddChild from './components/add-child/add-child';
 import AddChild2 from './components/add-child/add-child2';
+=======
+import AddChild from './components/add-child/add-child'
+import SignUp from './components/signup/Signup'
+import AddChild2 from './components/add-child/add-child2'
+import Home from './components/home/Home'
+>>>>>>> master
 
 
 export default class assistNow extends Component {
@@ -24,8 +31,13 @@ export default class assistNow extends Component {
     switch(route.id) {
       case 'home':
         return (<Home navigator={navigator} />);
+<<<<<<< HEAD
       case 'SignUp':
         return (<SingUp navigator={navigator} />);
+=======
+      case 'signUp':
+        return (<SignUp navigator={navigator} />);
+>>>>>>> master
       case 'addChild': 
         return (<AddChild navigator={navigator} />);
       case 'addChild2':
