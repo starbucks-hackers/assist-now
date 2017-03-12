@@ -20,8 +20,8 @@ export default class Profile extends Component {
     }
     componentWillMount(){
         this.setState({
-            name: 'Wesley Huang',
-            img: 'https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAcrAAAAJDRkYjUzMjQ2LWYwYTctNDI1Yi05ZDVlLTY5Y2JhODk3Yzk1YQ.jpg',
+            name: 'Hieu Nguyen',
+            img: 'https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAaOAAAAJDA4YjJiYzJjLTI3MzMtNGU1NC1iNjEzLThmODYyMzA0OTA1Mw.jpg',
             children: [
                 {
                     name: 'Rose',
