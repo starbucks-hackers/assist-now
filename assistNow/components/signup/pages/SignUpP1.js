@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import {
-	StyleSheet,
+import { 
 	Text,
 	View,
 	Button
@@ -8,38 +7,34 @@ import {
 
 
 export default class SignUpP1 extends Component {
-	constructor(props) {
-    super(props);
-    this.state = {
-      firstname: '',
-      lastname: '',
-      address: '',
-      state: '',
-      isVisible: false
-   	}
-  }
+	
 	render(){
 		return(
-			<View style={styles.sign1Container}>
+			<View>
 				<Text>First Name:</Text>
 				<Text>Last Name:</Text>
-				<Text>Telephone:</Text>
+				<Text>First Name:</Text>
 				<Text>Address:</Text>
+				
 				<Text>Please upload your an image: </Text>
 			</View>
 		);
 	}
 }
 
-const styles = StyleSheet.create({
-	sign1Container: {
-		flex: 1,
-		flexDirection: 'row',
-		justifyContent: 'stretch',
-		alignItems: 'center'
-		// paddingLeft: 10
-	}
-})
+// const styles = {
+// 	signUpStyle:{
+// 		background: 'rgba( 0, 121, 189, 0.85)',
+// 		justifyContent: 'center',
+// 		alignItems: 'center',
+// 		verticalAlign: 'center',
+// 		height: 60,
+// 		paddingTop: 15,
+// 		shadowColor: '#000',
+// 		shadowOffset: { width: 0, height: 2 },
+// 		shadowOpacity: 0.2
+// 	}
+// }
 
 // export default class  SignUpP1 extends Component {
 // 	render() {

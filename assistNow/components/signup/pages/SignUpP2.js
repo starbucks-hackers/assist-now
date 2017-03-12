@@ -9,8 +9,7 @@ export default class  SignUpP2 extends Component {
 	render() {
 		return(
 			<View>
-				<Text>email:</Text>
-				<Text>password:</Text>
+				<Text>password setup</Text>
 			</View>
 		)
 	}
