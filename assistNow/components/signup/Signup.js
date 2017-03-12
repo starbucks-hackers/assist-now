@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { 
+import {
+	StyleSheet,
 	Text,
 	View,
 	Button
@@ -8,30 +9,29 @@ import {
 
 
 export default class SignUp extends Component {
-	const { signUpStyle } = styles;
 
 	render(){
 		return(
 			<View>
-				<Text style={signUpStyle}>Create Profile</Text>
+				<Text style={styles.signUpTitle}>Create Profile</Text>
 			</View>
-		);
+		)
 	}
 }
 
-const styles = {
-	signUpStyle:{
-		background: 'rgba( 0, 121, 189, 0.85)',
+const styles = StyleSheet.create({
+	signUpTitle: {
+		backgroundColor: 'rgba( 0, 121, 189, 0.85)',
 		justifyContent: 'center',
 		alignItems: 'center',
-		verticalAlign: 'center',
 		height: 60,
 		paddingTop: 15,
 		shadowColor: '#000',
 		shadowOffset: { width: 0, height: 2 },
 		shadowOpacity: 0.2
 	}
-}
+});
+
 
 
 //Goal:

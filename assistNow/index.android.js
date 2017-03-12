@@ -26,7 +26,7 @@ export default class assistNow extends Component {
     switch(route.id) {
       case 'home':
         return (<Home navigator={navigator} />);
-      case 'SignUp':
+      case 'signup':
         return (<SignUp navigator={navigator} />);
       case 'addChild': 
         return (<AddChild navigator={navigator} />);
