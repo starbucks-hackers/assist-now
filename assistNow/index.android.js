@@ -16,9 +16,11 @@ import {
 
 import Home from './components/home/Home';
 import Login from './components/login/login'
-import SignUp from './components/signup/SignUp';
+import SignUp from './components/signup/Signup';
 import AddChild from './components/add-child/add-child';
 import AddChild2 from './components/add-child/add-child2';
+import Profile from './components/profile/Profile'
+
 
 
 export default class assistNow extends Component {
@@ -28,12 +30,14 @@ export default class assistNow extends Component {
         return (<Home navigator={navigator} />);
       case 'login':
         return (<Login navigator={navigator} />); 
-      case 'signup':
+      case 'signUp':
         return (<SignUp navigator={navigator} />);
       case 'addChild': 
         return (<AddChild navigator={navigator} />);
       case 'addChild2':
         return (<AddChild2 navigator={navigator} />);
+      case 'profile':
+        return (<Profile navigator={navigator} />);
     }
   }
 
