@@ -19,14 +19,12 @@ import AddChild2 from './components/add-child/add-child2'
 import Home from './components/home/Home'
 import Profile from './components/profile/Profile'
 
-
-
 export default class assistNow extends Component {
   renderScene(route, navigator) {
     switch(route.id) {
       case 'home':
         return (<Home navigator={navigator} />);
-      case 'signUp':
+      case 'signup':
         return (<SignUp navigator={navigator} />);
       case 'addChild': 
         return (<AddChild navigator={navigator} />);
@@ -40,7 +38,7 @@ export default class assistNow extends Component {
   render() {
     return (
       <Navigator 
-        initialRoute={{id:'home'}}
+        initialRoute={{id:'profile'}}
         renderScene={this.renderScene}
         configureScreen={(route, routeStack) => Navigator.SceneConfigs.FloatFromBottom}
       />
