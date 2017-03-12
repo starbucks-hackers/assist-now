@@ -10,12 +10,12 @@ import {
 export default class Home extends Component {
     toForm(){
         this.props.navigator.push({
-            id: 'signUp'
+            id: 'signup'
         });
     }
     toSignIn(){
         this.props.navigator.push({
-            id: 'signin'
+            id: 'login'
         })
     }
     render(){
@@ -36,7 +36,7 @@ export default class Home extends Component {
                 <Button
                     style={styles.button}
                     
-                    title="Sign In"
+                    title="Login"
                     onPress={this.toSignIn.bind(this)}
                 />
             </View>

@@ -8,7 +8,9 @@ import {
   Button
 } from 'react-native';
 
-export default class name extends Component {
+import Navbar from './../navbar/navbar';
+
+export default class Notification extends Component {
   constructor() {
     super();
     this.state = {
@@ -18,7 +20,9 @@ export default class name extends Component {
   render() {
     return (
       <View>
-        <Text>Empty Component</Text>
+        <Navbar navigator={this.props.navigator} />
+
+        <Text>from notificationzzz</Text>
       </View>
     );
   }

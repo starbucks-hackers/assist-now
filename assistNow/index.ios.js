@@ -13,14 +13,13 @@ import {
   Navigator
 } from 'react-native';
 
-
-import Home from './components/home/Home'
-import SignUp from './components/signup/Signup'
 import AddChild from './components/add-child/add-child'
+import SignUp from './components/signup/Signup'
 import AddChild2 from './components/add-child/add-child2'
+import Home from './components/home/Home'
 import Profile from './components/profile/Profile'
-
-
+import Nannys from './components/nannys/Nannys'
+import NannyProfile from './components/nannys/nannysProfile/NannysProfile'
 
 export default class assistNow extends Component {
   renderScene(route, navigator) {
@@ -35,13 +34,17 @@ export default class assistNow extends Component {
         return (<AddChild2 navigator={navigator} />);
       case 'profile':
         return (<Profile navigator={navigator} />);
+      case 'nannys':
+        return (<Nannys navigator={navigator} />);
+      case 'nannyprofile':
+        return (<NannyProfile navigator={navigator} data={route}/>)
     }
   }
 
   render() {
     return (
       <Navigator 
-        initialRoute={{id:'profile'}}
+        initialRoute={{id:'nannys'}}
         renderScene={this.renderScene}
         configureScreen={(route, routeStack) => Navigator.SceneConfigs.FloatFromBottom}
       />
