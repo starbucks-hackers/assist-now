@@ -33,7 +33,7 @@ export default class  SignUpP2 extends Component {
 					onChangeText={(email)=> {this.props.updateInfo('email', email)}}>
 				</TextInput>
 
-				<Text>password:</Text>
+				<Text>Password:</Text>
 				<TextInput
 					onChangeText={(password)=> {this.props.updateInfo('password', password)}}>
 				</TextInput>

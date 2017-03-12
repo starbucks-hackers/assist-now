@@ -4,7 +4,8 @@ import {
 	Text,
 	TextInput,
 	View,
-	Button
+	Button,
+	AsyncStorage
 } from 'react-native';
 import SignUpP1 from './pages/SignUpP1';
 import SignUpP2 from './pages/SignUpP2';
@@ -38,14 +39,43 @@ export default class SignUp extends Component {
   		this.setState({
   			[field]: content
   		})
+  		if (field === 'email') {
+  			this.setState({
+  				id: content
+  			})
+  		}
   	setTimeout(()=>{
   		console.log(this.state)
   	}, 300)
   }
-  
-  submitInfo() {
 
-  }
+  submitInfo() {
+        return fetch('https://8livqxv493.execute-api.us-west-2.amazonaws.com/dev/api/user/create', {
+					  method: 'POST',
+					  headers: {
+					    'Accept': 'application/json',
+					    'Content-Type': 'application/json',
+					  },
+					  body: JSON.stringify({
+					    id:this.state.id,
+							firstName:this.state.firstName,
+							lastName: this.state.lastName,
+							email:this.state.email,
+							phone:this.state.phone,
+							address:this.state.address,
+							password:this.state.password
+					  })
+					}).then(()=> {
+						console.log("user created")
+						AsyncStorage.setItem('currentUser', this.state.id);
+						this.props.navigator.push({
+							id:'profile'
+						})
+					})
+        .catch((error) => {
+            console.error(error);
+        });
+    }
 
 	render(){
 		
