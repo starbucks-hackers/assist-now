@@ -70,6 +70,9 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     height: 80,
+    width: 425,
+    zIndex: 9999999999,
+    backgroundColor: 'white',
   },
   v1: {
     flex: 1,
