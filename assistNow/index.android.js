@@ -13,16 +13,19 @@ import {
   Navigator
 } from 'react-native';
 
-import AddChild from './components/add-child/add-child'
-import SignUp from './components/signup/Signup'
-import AddChild2 from './components/add-child/add-child2'
+import Home from './components/home/Home';
+import SignUp from './components/signup/SignUp';
+import AddChild from './components/add-child/add-child';
+import AddChild2 from './components/add-child/add-child2';
 
 
 export default class assistNow extends Component {
   renderScene(route, navigator) {
     switch(route.id) {
-      case 'signUp':
-        return (<SignUp navigator={navigator} />);
+      case 'home':
+        return (<Home navigator={navigator} />);
+      case 'SignUp':
+        return (<SingUp navigator={navigator} />);
       case 'addChild': 
         return (<AddChild navigator={navigator} />);
       case 'addChild2':
