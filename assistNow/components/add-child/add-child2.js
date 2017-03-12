@@ -14,16 +14,25 @@ export default class AddChild2 extends Component {
 
     }
   }
-  componentWillMount() {
-    this.setState({
-      child1Info: AsyncStorage.getItem('test')
+  componentDidMount() {
+    AsyncStorage.getItem("childfirstname").then((res) => {
+        this.setState({"childfirstname": res});
+    })
+    AsyncStorage.getItem("childlastname").then((res) => {
+        this.setState({"childlastname": res});
+    })
+    AsyncStorage.getItem("childage").then((res) => {
+        this.setState({"childage": res});
+    })
+    AsyncStorage.getItem("childgender").then((res) => {
+        this.setState({"childgender": res});
     })
   }
   render() {
     return (
       <View>
         <Text>from child2</Text>
-        {this.state.child1Info ? this.state.child1Info : ''}
+        <Text>{this.state.childgender ? this.state.childgender : ''}</Text>
       </View>
     );
   }
