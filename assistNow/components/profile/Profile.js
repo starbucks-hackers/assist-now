@@ -49,6 +49,8 @@ export default class Profile extends Component {
 
         return (
             <View style={styles.container}>
+                <Navbar navigator={this.props.navigator} />
+                
                 <Image source={{uri: this.state.img}} style={{width: 100, height:100, borderRadius: 50, marginBottom: 10, marginTop: 20}}/>
                 <Text style={styles.name}>{this.state.name}</Text>
                 <Text style={{marginBottom: 20}}>Children</Text>
@@ -69,8 +71,6 @@ export default class Profile extends Component {
                     color= 'blue'
                 />
                 </View>
-
-                <Navbar navigator={this.props.navigator} />
             </View>
         )
     }
