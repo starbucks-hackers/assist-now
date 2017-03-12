@@ -77,7 +77,6 @@ export default class AddChild extends Component {
           onValueChange={(gender) => this.setState({gender: gender})}>
           <Picker.Item label="Male" value="male" />
           <Picker.Item label="Female" value="female" />
-          <Picker.Item label="Other" value="other" />
         </Picker>
         <Button
                 style={styles.button}
