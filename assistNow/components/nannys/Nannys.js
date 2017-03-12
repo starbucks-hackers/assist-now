@@ -97,6 +97,7 @@ export default class Nannys extends Component{
     render(){
         return (
             <View style={styles.container}>
+                <Navbar navigator={this.props.navigator} />
                 <Text style={{fontSize: 50, fontWeight: '300', color:'#0079BD'}}>Nannys</Text>
                 {this.state.nannys ?
                     this.state.nannys.map((nanny) => {
@@ -110,8 +111,6 @@ export default class Nannys extends Component{
                                     test={this.toNannyProfile}
                                 />
                     }) : ''}
-
-                <Navbar navigator={this.props.navigator} />
             </View>
         )
     }

@@ -20,9 +20,9 @@ export default class Notification extends Component {
   render() {
     return (
       <View>
-        <Text>from notificationzzz</Text>
-
         <Navbar navigator={this.props.navigator} />
+
+        <Text>from notificationzzz</Text>
       </View>
     );
   }
