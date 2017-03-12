@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 
 import ChildCard from './ChildCard';
+import Navbar from './../navbar/navbar';
 
 export default class Profile extends Component {
     constructor(){
@@ -68,6 +69,8 @@ export default class Profile extends Component {
                     color= 'blue'
                 />
                 </View>
+
+                <Navbar navigator={this.props.navigator} />
             </View>
         )
     }
