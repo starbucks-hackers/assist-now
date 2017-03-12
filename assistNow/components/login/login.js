@@ -8,6 +8,8 @@ import {
   Button
 } from 'react-native';
 
+import Navbar from './../navbar/navbar'
+
 export default class Login extends Component {
   constructor() {
     super();
@@ -24,21 +26,24 @@ export default class Login extends Component {
   }
   login() {
     console.log("logging in");
+    this.props.navigator.push({
+        id: 'profile'
+    });
   }
 
   render() {
     return (
-      <View>
+      <View style={{paddingTop: 200}}>
         <Text>Email</Text>
         <TextInput
-          style={{height: 40}}
+          style={{marginBottom: 50}}
           onChangeText={(email) => this.setState({email})}
           value={this.state.email}
         />
         <Text>Password</Text>
         <TextInput
           secureTextEntry={true}
-          style={{height: 40}}
+          style={{marginBottom: 50}}
           onChangeText={(password) => this.setState({password})}
           value={this.state.password}
         />

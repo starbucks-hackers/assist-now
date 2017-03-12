@@ -7,7 +7,8 @@ import {
   Image,
 } from 'react-native';
 
-import NannyCard from './NannyCard'
+import NannyCard from './NannyCard';
+import Navbar from './../navbar/navbar';
 
 export default class Nannys extends Component{
     constructor(){
@@ -109,6 +110,8 @@ export default class Nannys extends Component{
                                     test={this.toNannyProfile}
                                 />
                     }) : ''}
+
+                <Navbar navigator={this.props.navigator} />
             </View>
         )
     }
