@@ -20,6 +20,21 @@ export default class AddChild extends Component {
       gender: 'male'
     };
   }
+  componentDidMount() {
+    AsyncStorage.getItem("childallergies").then((res) => {
+        this.setState({"childallergies": res});
+    })
+    AsyncStorage.getItem("childdietaryrestrictions").then((res) => {
+        this.setState({"childdietaryrestrictions": res});
+    })
+    AsyncStorage.getItem("childhealthconcerns").then((res) => {
+        this.setState({"childhealthconcerns": res});
+    })
+    AsyncStorage.getItem("childother").then((res) => {
+        this.setState({"childother": res});
+    })
+  }
+
   goToAdditional() {
     AsyncStorage.setItem('childfirstname', this.state.firstname);
     AsyncStorage.setItem('childlastname', this.state.lastname);
@@ -32,6 +47,7 @@ export default class AddChild extends Component {
   addChild() {
     console.log("added child");
   }
+  
 
   render() {
     return (
@@ -72,7 +88,7 @@ export default class AddChild extends Component {
                 style={styles.button}
                 title="Add"
                 onPress={this.addChild.bind(this)}
-            />
+        />
       </View>
     );
   }
