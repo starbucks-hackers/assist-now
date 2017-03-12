@@ -26,14 +26,15 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         borderStyle: 'solid',
         borderWidth: 1,
-        borderColor: '#0079BD',
+        borderColor: '#8FA9F0',
         width: 350,
         padding: 5,
         borderRadius: 5,
-        backgroundColor: '#0079BD',
+        backgroundColor: '#8FA9F0',
     },
     name:{
         fontSize: 40,
         marginLeft: 10,
+        fontWeight: '100',
     }
 })
