@@ -13,10 +13,11 @@ export default class NannyCard extends Component {
         return (
             <TouchableHighlight onPress={() => {this.props.test(this.props.id)}}>
             <View style={styles.container} >
+                
                 <Image source={{uri: this.props.img}} style={{width: 70, height:70, borderRadius: 10}}/>
                 <Text style={styles.nannyName}>{this.props.name}</Text>
                 <Text style={styles.nannyName}>{this.props.age}</Text>
-                <Text style={styles.nannyName}>{this.props.rating}</Text>
+                <Text style={styles.rating}>{this.props.rating}</Text>
             </View>
             </TouchableHighlight>
         )
@@ -40,5 +41,16 @@ const styles = StyleSheet.create({
     nannyName:{
         fontSize: 25,
         fontWeight: '100',
+    },
+    rating:{
+        color: 'blue',
     }
+    // table:{
+    //     flexDirection: 'row',
+    //     width: 200,
+    //     justifyContent: 'space-between',
+    //     position: 'absolute',
+    //     right: 0,
+    //     top: 0,
+    // }
 })

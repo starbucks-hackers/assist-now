@@ -8,11 +8,12 @@ import {
 } from 'react-native';
 
 export default class NannyProfile extends Component{
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
     }
     componentWillMount(){
         this.setState({
+            clickedNanny: false,
             nannys: [
                 {
                     id: 1,
@@ -84,20 +85,32 @@ export default class NannyProfile extends Component{
     }
     componentDidMount(){
         if(this.state.nannys){
-            let clickedNanny = this.state.nannys.filter((nanny) => {
-                return nanny.id === this.props.data.passProps.id
-            });
-            this.setState({
-                clickedNanny: clickedNanny
-            });
-            console.log(this.state.clickedNanny);
+            for(var i = 0; i < this.state.nannys.length; i++){
+                if(this.state.nannys[i].id === this.props.data.passProps.id){
+                    this.setState({
+                        clickedNanny: this.state.nannys[i]
+                    })
+                };
+            }
+            console.log(this.state.clickedNanny,"sefsef");
         }     
     }
     render(){
         return (
-            <View>
-                <Text></Text>
+            <View style={styles.container}>
+                <Image source={{uri: this.state.clickedNanny.img}}/>
+
+                <Text>{this.state.clickedNanny ? this.state.clickedNanny.name : ''}</Text>
+                <Text>{this.state.clickedNanny ? this.state.clickedNanny.age : ''}</Text>
             </View>
         )
     }
 }
+
+const styles = StyleSheet.create({
+    container: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 30,
+    },
+})
