@@ -10,7 +10,7 @@ import {
 export default class Home extends Component {
     toForm(){
         this.props.navigator.push({
-            id: 'signup'
+            id: 'signUp'
         });
     }
     toSignIn(){
@@ -26,9 +26,8 @@ export default class Home extends Component {
             <View style={styles.buttonWrapper}>
             <View style={styles.button}>
                 <Button
-                    
+
                     title="Sign Up"
-                    color ="white"
                     onPress={this.toForm.bind(this)}
                 />
             </View>
@@ -70,8 +69,8 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderRadius: 3,
         backgroundColor: '#0079BD',
-        paddingLeft: 10,
-        paddingRight: 10,
+        // paddingLeft: 10,
+        // paddingRight: 10,
     },
     h1: {
         fontSize: 45,
