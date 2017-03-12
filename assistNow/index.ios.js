@@ -52,7 +52,7 @@ export default class assistNow extends Component {
   render() {
     return (
       <Navigator 
-        initialRoute={{id:'profile'}}
+        initialRoute={{id:'nannys'}}
         renderScene={this.renderScene}
         configureScreen={(route, routeStack) => Navigator.SceneConfigs.FloatFromBottom}
       />
