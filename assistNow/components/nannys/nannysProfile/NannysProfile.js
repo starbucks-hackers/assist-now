@@ -18,6 +18,7 @@ export default class NannyProfile extends Component{
                 {
                     id: 1,
                     name: 'Tracy',
+                    last: 'Smith',
                     age: 22,
                     rating: 5,
                     img: 'https://upload.wikimedia.org/wikipedia/commons/d/d2/Michelle-Borromeo-Actor-Headshots-Vancouver-BC20110408_0030.jpg',
@@ -26,11 +27,13 @@ export default class NannyProfile extends Component{
                     notifications:[],
                     email: 'ilovebabies@gmail.com',
                     phone: '999-999-9999',
-                    specialSkills: ['Cooking', 'CPR', 'Spanish', 'First Aid']
+                    specialSkills: ['Cooking', 'Spanish', 'First Aid'],
+                    certifications: ['CPR']
                 },
                 {
                     id: 2,
                     name: 'Stacy',
+                    last: 'Chu',
                     age: 45,
                     rating: 4,
                     img: 'https://c1.staticflickr.com/7/6129/6005842178_c7fd917eeb_b.jpg',
@@ -39,11 +42,13 @@ export default class NannyProfile extends Component{
                     notifications:[],
                     email: 'ilovebabies@gmail.com',
                     phone: '999-999-9999',
-                    specialSkills: ['Cooking', 'CPR', 'Spanish', 'First Aid']
+                    specialSkills: ['Cooking', 'Spanish', 'First Aid'],
+                    certifications: ['CPR']                
                 },
                 {
                     id: 3,
                     name: 'Mary',
+                    last: 'Lee',
                     age: 37,
                     rating: 4,
                     img: 'https://c1.staticflickr.com/4/3582/3902660001_ef57d48578_b.jpg',
@@ -52,11 +57,13 @@ export default class NannyProfile extends Component{
                     notifications:[],
                     email: 'ilovebabies@gmail.com',
                     phone: '999-999-9999',
-                    specialSkills: ['Cooking', 'CPR', 'Spanish', 'First Aid']
+                    specialSkills: ['Cooking', 'Spanish', 'First Aid'],
+                    certifications: ['CPR']                
                 },
                 {
                     id: 4,
                     name: 'Sally',
+                    last: 'Hawkins',
                     age: 24,
                     rating: 5,
                     img: 'https://upload.wikimedia.org/wikipedia/commons/f/f2/Sarah_Beattie-Smith.jpg',
@@ -65,11 +72,13 @@ export default class NannyProfile extends Component{
                     notifications:[],
                     email: 'ilovebabies@gmail.com',
                     phone: '999-999-9999',
-                    specialSkills: ['Cooking', 'CPR', 'Spanish', 'First Aid']
+                    specialSkills: ['Cooking', 'Spanish', 'First Aid'],
+                    certifications: ['CPR']                
                 },
                 {
                     id: 5,
                     name: 'Ashley',
+                    last: 'Simposon',
                     age: 55,
                     rating: 4,
                     img: 'https://c1.staticflickr.com/1/496/19288474958_1b593667d5_b.jpg',
@@ -78,11 +87,13 @@ export default class NannyProfile extends Component{
                     notifications:[],
                     email: 'ilovebabies@gmail.com',
                     phone: '999-999-9999',
-                    specialSkills: ['Cooking', 'CPR', 'Spanish', 'First Aid']
+                    specialSkills: ['Cooking', 'Spanish', 'First Aid'],
+                    certifications: ['CPR']                
                 },
                 {
                     id: 6,
                     name: 'Emily',
+                    last: 'Blunt',
                     age: 37,
                     rating: 4,
                     img: 'https://c1.staticflickr.com/2/1276/5190042885_bbf05b1571_b.jpg',
@@ -91,11 +102,13 @@ export default class NannyProfile extends Component{
                     notifications:[],
                     email: 'ilovebabies@gmail.com',
                     phone: '999-999-9999',
-                    specialSkills: ['Cooking', 'CPR', 'Spanish', 'First Aid']
+                    specialSkills: ['Cooking', 'Spanish', 'First Aid'],
+                    certifications: ['CPR']                
                 },
                 {
                     id: 7,
                     name: 'Samantha',
+                    last: 'Gomez',
                     age: 22,
                     rating: 5,
                     img: 'https://upload.wikimedia.org/wikipedia/commons/d/d2/Michelle-Borromeo-Actor-Headshots-Vancouver-BC20110408_0030.jpg',
@@ -104,11 +117,13 @@ export default class NannyProfile extends Component{
                     notifications:[],
                     email: 'ilovebabies@gmail.com',
                     phone: '999-999-9999',
-                    specialSkills: ['Cooking', 'CPR', 'Spanish', 'First Aid']
+                    specialSkills: ['Cooking', 'Spanish', 'First Aid'],
+                    certifications: ['CPR']                
                 },
                 {
                     id: 8,
                     name: 'Wendy',
+                    last: 'Pan',
                     age: 45,
                     rating: 4,
                     img: 'https://c1.staticflickr.com/7/6129/6005842178_c7fd917eeb_b.jpg',
@@ -117,11 +132,13 @@ export default class NannyProfile extends Component{
                     notifications:[],
                     email: 'ilovebabies@gmail.com',
                     phone: '999-999-9999',
-                    specialSkills: ['Cooking', 'CPR', 'Spanish', 'First Aid']
+                    specialSkills: ['Cooking', 'Spanish', 'First Aid'],
+                    certifications: ['CPR']                
                 },
                 {
                     id: 9,
                     name: 'Margret',
+                    last: 'Thatcher',
                     age: 37,
                     rating: 4,
                     img: 'https://c1.staticflickr.com/4/3582/3902660001_ef57d48578_b.jpg',
@@ -130,7 +147,8 @@ export default class NannyProfile extends Component{
                     notifications:[],
                     email: 'ilovebabies@gmail.com',
                     phone: '999-999-9999',
-                    specialSkills: ['Cooking', 'CPR', 'Spanish', 'First Aid']
+                    specialSkills: ['Cooking', 'Spanish', 'First Aid'],
+                    certifications: ['CPR']                
                 },
             ]
         })
